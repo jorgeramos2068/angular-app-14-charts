@@ -11,23 +11,15 @@ import { Label } from 'ng2-charts';
 export class BarComponent implements OnInit {
   public barChartOptions: ChartOptions = {
     responsive: true,
-    // We use these empty structures as placeholders for dynamic theming.
-    scales: { xAxes: [{}], yAxes: [{}] },
-    plugins: {
-      datalabels: {
-        anchor: 'end',
-        align: 'end',
-      },
-    },
   };
   public barChartLabels: Label[] = [
-    '2006',
-    '2007',
-    '2008',
-    '2009',
-    '2010',
-    '2011',
-    '2012',
+    '2021',
+    '2022',
+    '2023',
+    '2024',
+    '2025',
+    '2026',
+    '2027',
   ];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
@@ -45,12 +37,12 @@ export class BarComponent implements OnInit {
     // Only Change 3 values
     this.barChartData[0].data = [
       Math.round(Math.random() * 100),
-      59,
-      80,
-      Math.random() * 100,
-      56,
-      Math.random() * 100,
-      40,
+      Math.round(Math.random() * 100),
+      Math.round(Math.random() * 100),
+      Math.round(Math.random() * 100),
+      Math.round(Math.random() * 100),
+      Math.round(Math.random() * 100),
+      Math.round(Math.random() * 100),
     ];
   }
 }
