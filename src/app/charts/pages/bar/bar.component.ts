@@ -6,7 +6,6 @@ import { Label } from 'ng2-charts';
 @Component({
   selector: 'app-bar',
   templateUrl: './bar.component.html',
-  styles: [],
 })
 export class BarComponent implements OnInit {
   public barChartOptions: ChartOptions = {
