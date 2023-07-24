@@ -18,10 +18,19 @@ export class HttpDonutComponent implements OnInit {
   constructor(private chartsService: ChartsService) {}
 
   ngOnInit(): void {
-    this.chartsService.getUsersBySocialMedia().subscribe({
-      next: (data) => {
-        const labels: string[] = Object.keys(data);
-        const values: any[] = Object.values(data);
+    // Approach 1
+    // this.chartsService.getUsersBySocialMedia().subscribe({
+    //   next: (data) => {
+    //     const labels: string[] = Object.keys(data);
+    //     const values: any[] = Object.values(data);
+    //     this.doughnutChartLabels = labels;
+    //     this.doughnutChartData.push(values);
+    //   },
+    // });
+
+    // Approach 2
+    this.chartsService.getUsersBySocialMediaFormatted().subscribe({
+      next: ({ labels, values }) => {
         this.doughnutChartLabels = labels;
         this.doughnutChartData.push(values);
       },
